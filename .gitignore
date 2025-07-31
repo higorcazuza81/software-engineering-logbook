@@ -1,0 +1,109 @@
+# ===================================================================
+# Professional .gitignore for Python / Data / DevOps Projects
+# Zeca's Gold Standard Template - 2025
+# ===================================================================
+
+# === Python Virtual Environments ===
+# Never commit virtual environments. They are specific to your OS and bloat the repo.
+# Recreate them from your requirements.txt or pyproject.toml.
+.venv/
+venv/
+env/
+.env/
+.direnv/
+
+# === Python Cache & Compiled Files ===
+# These are generated automatically by Python and can be recreated.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Python Build & Distribution Artifacts ===
+# Generated when you build a package. Should not be versioned.
+build/
+dist/
+*.egg-info/
+sdist/
+wheels/
+pip-wheel-metadata/
+*.egg
+
+# === IDE & Editor Specific Files ===
+# Each developer has their own setup. Don't commit personal editor settings.
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+# Vim
+*.swp
+*.swo
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# === Operating System Files ===
+# Junk files created by different OSes.
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === Secrets, Credentials & Sensitive Files (CRITICAL!) ===
+# NEVER, EVER COMMIT SECRETS! This is the most important section.
+.env
+.env.*
+!.env.example # <-- The '!' un-ignores the example file, which is a best practice.
+credentials.json
+*.pem
+*.key
+*.keyfile
+*.p12
+.aws/
+.gcp/
+*.secrets.*
+
+# === Data Files ===
+# Large data files do not belong in Git. Use a proper data storage like S3,
+# a database, or Git LFS if absolutely necessary.
+*.csv
+*.json # Be careful: small config JSONs are fine, large data JSONs are not.
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.hdf5
+*.pkl
+*.pickle
+
+# === Log & Temporary Files ===
+# Logs are specific to a single run and should not be versioned.
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+
+# === Terraform & Infrastructure ===
+# These files contain local state and lock information. Not meant to be shared via Git.
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+crash.log
+
+# === Jupyter Notebook ===
+# Checkpoint files for Jupyter notebooks.
+.ipynb_checkpoints
+
+# === Testing & Coverage ===
+# Reports and artifacts from testing frameworks.
+.pytest_cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
